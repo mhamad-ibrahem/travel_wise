@@ -20,9 +20,9 @@ class HomePage extends StatelessWidget {
           controller.getData();
         },
         message: controller.errorMessage,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Column(
+        child: const SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child:  Column(
             children: [
               HomeSearchFieldWidget(),
               HomeTravelsWidget(),

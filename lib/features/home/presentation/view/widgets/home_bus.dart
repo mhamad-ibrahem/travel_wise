@@ -27,8 +27,8 @@ class HomeBusWidget extends StatelessWidget {
           width: AppSize.screenWidth(context: context),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemCount: homeController.trips.length,
-            itemBuilder: (context, index) => CustomTravelCardWidget(tripsModel: homeController.trips[index],),
+            itemCount: homeController.buses.length,
+            itemBuilder: (context, index) => CustomTravelCardWidget(tripsModel: homeController.buses[index],),
             separatorBuilder: (context, index) => SizedBox(
               width: 10.w,
             ),

@@ -10,7 +10,9 @@ class HomeController extends GetxController {
   HomeController({required this.getHomeDataUseCase});
   StatusRequest statusRequest = StatusRequest.none;
   String errorMessage = '';
-  List<TripsModel>trips=[];
+  List<TripsModel> trips = [];
+  List<TripsModel> offers = [];
+  List<TripsModel> buses = [];
   getData() async {
     statusRequest = StatusRequest.loading;
     update();
@@ -18,7 +20,10 @@ class HomeController extends GetxController {
     statusRequest = response.statusRequest;
     update();
     if (statusRequest == StatusRequest.dataLoaded) {
-      trips=response.responseData;
+      List<TripsModel> data = response.responseData;
+      offers = data.where((e) => e.type == 'Offers').toList();
+      trips = data.where((e) => e.type == 'Flights').toList();
+      buses = data.where((e) => e.type == 'Buses').toList();
       update();
     } else {
       errorMessage = response.errorMessage ?? '';
