@@ -1,4 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Inernet permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+     <!-- File picker permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <application
         android:label="travel_wise"
         android:name="${applicationName}"

@@ -6,7 +6,7 @@ mixin HomeLinks {
   String get getHomeDataLink => "${AppConfig.baseUrl}/admin/travels";
   String get getMyTravelsDataLink => "${AppConfig.baseUrl}/admin/user/travels";
 
-  String get bookTripLink => "${AppConfig.baseUrl}/admin/countries";
+  String get bookTripLink => "${AppConfig.baseUrl}/admin/user-travels";
   String get getProfileLink =>
       "${AppConfig.baseUrl}/admin/users/${AppServices.localUserData?.id}";
 

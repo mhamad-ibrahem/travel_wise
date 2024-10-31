@@ -12,8 +12,10 @@ class BookModel {
   Map<String, dynamic> toJson() {
     return {
       'user_id': userId,
-      'trip_id': tripId,
-      'number_of_tickets': numberOfTickets
+      'travel_id': tripId,
+      'count': numberOfTickets,
+      'status': 'Pending',
+      'is_Waiting_list': false
     };
   }
 }

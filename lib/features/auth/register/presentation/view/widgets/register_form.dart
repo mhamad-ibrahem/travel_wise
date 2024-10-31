@@ -166,11 +166,9 @@ class RegisterFormWidget extends StatelessWidget {
             hint: 'Confirm Password',
             icon: const Icon(Icons.lock),
             validator: (value) {
-              return ValidationErrors.fieldValidation(
-                  value: value!,
-                  minValue: 6,
-                  maxValue: 100,
-                  validationType: ValidationType.none);
+              return ValidationErrors.confirmValidate(
+                  controller.passwordController.text,
+                  controller.confirmPasswordController.text);
             },
           ),
           const RegisterImageFormWidget(),

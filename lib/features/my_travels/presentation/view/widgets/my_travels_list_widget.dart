@@ -10,18 +10,18 @@ class MyTravelsListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetBuilder<MyTravelsController>(
-      builder: (controller) {
-        return ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: 1,
-          itemBuilder: (context, index) => const CustomTravelCardWidget(),
-          separatorBuilder: (context, index) => SizedBox(
-            height: 10.h,
-          ),
-        );
-      }
-    );
+    return GetBuilder<MyTravelsController>(builder: (controller) {
+      return ListView.separated(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: controller.myTravelsList.length,
+        itemBuilder: (context, index) => CustomTravelCardWidget(
+          model: controller.myTravelsList[index],
+        ),
+        separatorBuilder: (context, index) => SizedBox(
+          height: 10.h,
+        ),
+      );
+    });
   }
 }

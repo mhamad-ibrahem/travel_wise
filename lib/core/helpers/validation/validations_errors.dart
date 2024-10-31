@@ -50,7 +50,7 @@ class ValidationErrors {
     if (confirmPasswordValue != passwordValue ||
         confirmPasswordValue.isEmpty ||
         passwordValue.isEmpty) {
-      return "Doesn't compare".tr;
+      return "Doesn't match";
     }
   }
 
