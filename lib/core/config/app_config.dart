@@ -11,7 +11,7 @@ class AppConfig {
     'Authorization': "Bearer ${AppServices.localUserData?.token}",
   };
   static String baseUrl = dotenv.env["BASE_URL"] ?? "";
-  static String baseImageUrl = '$baseUrl/storage';
+  static String baseImageUrl = '${baseUrl.replaceAll('/api', '')}/storage';
   static const String version = "v1";
   static String baseUrlWithVersion = "$baseUrl/$version";
   static String googleMapsKey = dotenv.env["GOOGLE_MAPS_KEY"] ?? "";

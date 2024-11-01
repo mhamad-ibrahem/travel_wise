@@ -18,7 +18,6 @@ class TravelDetailsController extends GetxController {
 
   void bookTrip() async {
     if (numberOfTickets > 0) {
-      if (numberOfTickets <= (tripsModel!.minCapacity!)) {
         showLoadingDialog();
         ApiResponse response = await bookTripUseCase.execute(BookModel(
           numberOfTickets: numberOfTickets,
@@ -34,9 +33,6 @@ class TravelDetailsController extends GetxController {
           numberOfTickets = 0;
           update();
         }
-      } else {
-        AppCherryToast.showErrorToast(errorMessage: 'No enough tickets try add less number of tickets');
-      }
     } else {
       AppCherryToast.showErrorToast(errorMessage: 'Add number of tickets');
     }
