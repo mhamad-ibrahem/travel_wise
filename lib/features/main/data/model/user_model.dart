@@ -26,7 +26,7 @@ class UserModel {
   late final String? birthDate;
   late final String? nationalityId;
   late final String? mobile;
-  late final dynamic imagePath;
+  late final String? imagePath;
   late final String? passportImagePath;
   late final String? nationalIdImagePath;
   late final String? countryId;

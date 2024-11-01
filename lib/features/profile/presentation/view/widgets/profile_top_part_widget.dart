@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../../core/config/app_config.dart';
 import '../../../../../shared/widgets/image/custom_cached_net_image.dart';
 import '../../../../main/presentation/controller/main_controller.dart';
 
@@ -14,7 +15,11 @@ class ProfileTopPartWidget extends StatelessWidget {
     return Column(
       children: [
         CustomCachedNetImage(
-          imageUrl:mainController.userModel?.imagePath?? 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png',
+          imageUrl:mainController
+                        .userModel?.imagePath ==
+                    null
+                ? 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png'
+                : "${AppConfig.baseImageUrl}/${mainController.userModel?.imagePath}",
           height: 100.h,
           width: 100.w,
           borderRadius: BorderRadius.circular(50.r),

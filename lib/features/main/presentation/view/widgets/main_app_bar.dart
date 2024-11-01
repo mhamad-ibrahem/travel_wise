@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:travel_wise/core/config/app_config.dart';
+import 'package:travel_wise/core/helpers/log_helper/log_helper.dart';
 import 'package:travel_wise/core/routes/route_export.dart';
 import '../../../../../core/common/colors/app_colors.dart';
 import '../../controller/main_controller.dart';
@@ -27,18 +29,25 @@ AppBar mainAppBar({
             color: AppColors().white,
           ),
     ),
-    leading: Container(
-      height: 30,
-      width: 30,
-      margin: const EdgeInsets.all(5),
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(
-            image: CachedNetworkImageProvider(
-                mainController.userModel?.imagePath ??
-                    'https://cdn-icons-png.flaticon.com/512/6596/6596121.png'),
-            fit: BoxFit.contain,
-          )),
+    leading: GestureDetector(
+      onTap: (){
+        LogHelper.logCyan("${AppConfig.baseImageUrl}/${mainController.userModel?.imagePath}");
+      },
+      child: Container(
+        height: 30,
+        width: 30,
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: CachedNetworkImageProvider(mainController
+                          .userModel?.imagePath ==
+                      null
+                  ? 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png'
+                  : "${AppConfig.baseImageUrl}/${mainController.userModel!.imagePath}"),
+              fit: BoxFit.contain,
+            )),
+      ),
     ),
     actions: [
       IconButton(

@@ -24,14 +24,14 @@ class RegisterModel {
     required this.passportImage,
   });
 
- Future<FormData> toJson()async {
-    return  FormData.fromMap({
+  Future<FormData> toJson() async {
+    return FormData.fromMap({
       if (image.isNotEmpty)
-        "image":await MultipartFile.fromFile(image, filename: image),
+        "image_path": await MultipartFile.fromFile(image, filename: image),
       'passport_image_path':
-         await MultipartFile.fromFile(passportImage, filename: passportImage),
+          await MultipartFile.fromFile(passportImage, filename: passportImage),
       'national_id_image_path':
-        await  MultipartFile.fromFile(nationImage, filename: nationImage),
+          await MultipartFile.fromFile(nationImage, filename: nationImage),
       'email': email,
       'password': password,
       'first_name': firstName,

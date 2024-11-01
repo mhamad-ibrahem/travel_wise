@@ -6,7 +6,7 @@ class MyTravelsModel {
     required this.status,
      this.isWaitingList,
   });
-  late final int userId;
+  late final int? userId;
   late final Travels travels;
   late final String status;
   late final dynamic isWaitingList;
