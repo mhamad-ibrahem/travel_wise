@@ -45,7 +45,7 @@ AppBar mainAppBar({
                       null
                   ? 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png'
                   : "${AppConfig.baseImageUrl}/${mainController.userModel!.imagePath}"),
-              fit: BoxFit.contain,
+              fit: BoxFit.cover,
             )),
       ),
     ),

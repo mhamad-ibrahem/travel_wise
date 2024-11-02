@@ -1,17 +1,16 @@
-
 class MyTravelsModel {
   MyTravelsModel({
     required this.userId,
     required this.travels,
     required this.status,
-     this.isWaitingList,
+    this.isWaitingList,
   });
   late final int? userId;
   late final Travels travels;
   late final String status;
   late final dynamic isWaitingList;
-  
-  MyTravelsModel.fromJson(Map<String, dynamic> json){
+
+  MyTravelsModel.fromJson(Map<String, dynamic> json) {
     userId = json['user_id'];
     travels = Travels.fromJson(json['travels']);
     status = json['status'];
@@ -37,6 +36,7 @@ class Travels {
     required this.offerValue,
     required this.createdAt,
     required this.updatedAt,
+    required this.image,
   });
   late final int id;
   late final String? type;
@@ -54,8 +54,8 @@ class Travels {
   late final int? offerValue;
   late final String? createdAt;
   late final String? updatedAt;
-  
-  Travels.fromJson(Map<String, dynamic> json){
+  late final String? image;
+  Travels.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     type = json['type'];
     titleAr = json['title_ar'];
@@ -72,5 +72,7 @@ class Travels {
     offerValue = json['offer_value'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
+    image = json['main_image']['image_path'] ??
+        "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D";
   }
 }

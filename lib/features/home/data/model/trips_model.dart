@@ -16,6 +16,7 @@ class TripsModel {
     required this.offerValue,
     required this.createdAt,
     required this.updatedAt,
+    required this.image,
   });
   late final int id;
   late final String? type;
