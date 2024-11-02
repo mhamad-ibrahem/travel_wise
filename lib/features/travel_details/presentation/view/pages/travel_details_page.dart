@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:travel_wise/features/main/presentation/view/widgets/main_nav_bar.dart';
-import 'package:travel_wise/features/travel_details/presentation/controller/travel_details_controller.dart';
-import 'package:travel_wise/widgets/buttons/custom_button.dart';
-
 import '../../../../../shared/widgets/counter/counter_widget.dart';
+import '../../../../../widgets/buttons/custom_button.dart';
+import '../../../../main/presentation/view/widgets/main_nav_bar.dart';
+import '../../controller/travel_details_controller.dart';
 import '../widgets/travel_details_description_widget.dart';
 import '../widgets/travel_details_image_widget.dart';
 import '../widgets/travel_details_info_widget.dart';
-import '../widgets/travel_details_trip_plan_widget.dart';
 
 class TravelDetailsPage extends StatelessWidget {
   const TravelDetailsPage({super.key});
@@ -27,7 +25,7 @@ class TravelDetailsPage extends StatelessWidget {
                   TravelDetailsImageWidget(),
                   TravelDetailsInfoWidget(),
                   TravelDetailsDescriptionWidget(),
-                  TravelDetailsTripPlanWidget()
+                  // TravelDetailsTripPlanWidget()
                 ],
               ),
             ),

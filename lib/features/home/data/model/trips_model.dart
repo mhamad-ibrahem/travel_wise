@@ -33,6 +33,7 @@ class TripsModel {
   late final int? offerValue;
   late final String? createdAt;
   late final String? updatedAt;
+  late final String? image;
 
   TripsModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -51,5 +52,7 @@ class TripsModel {
     offerValue = json['offer_value'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
+    image = json['main_image']['image_path']??"https://images.unsplash.com/photo-1528543606781-2f6e6857f318?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D";
   }
 }
+
